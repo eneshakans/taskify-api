@@ -1,86 +1,113 @@
 package rocks.halhadus.taskify;
 
-import java.util.Objects;
-import java.util.Scanner;
+import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Dialog;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
+import javafx.util.Pair;
 
 public class TaskifyMethods {
-    public static void listTasks(TaskManager taskManager){
-        if (taskManager.getTasks().isEmpty()){
-            System.out.println("Task list is empty.");
-        }
-        for (Task task : taskManager.getTasks()){
-            String status;
-            if (task.isStatus()){
-                status = "Completed";
+
+    public static void showAddTaskDialog(TaskManager taskManager, ObservableList<Task> observableList) {
+        Dialog<Pair<String, String>> dialog = new Dialog<>();
+        dialog.setTitle("Add new task");
+        dialog.getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
+        GridPane grid = new GridPane();
+        grid.setHgap(10);
+        grid.setVgap(10);
+        TextField titleField = new TextField();
+        titleField.setPromptText("Task Title");
+        TextArea descriptionArea = new TextArea();
+        descriptionArea.setPromptText("Task Description");
+        grid.add(new Label("Title:"), 0, 0);
+        grid.add(titleField, 1, 0);
+        grid.add(new Label("Description:"), 0, 1);
+        grid.add(descriptionArea, 1, 1);
+        GridPane.setHgrow(titleField, Priority.ALWAYS);
+        GridPane.setHgrow(descriptionArea, Priority.ALWAYS);
+        dialog.getDialogPane().setContent(grid);
+        dialog.setResultConverter(dialogButton -> {
+            if (dialogButton == ButtonType.OK) {
+                return new Pair<>(titleField.getText(), descriptionArea.getText());
             }
-            else {
-                status = "Not completed";
-            }
-            if (!Objects.equals(task.getDescription(), "Empty")) {
-                System.out.println((taskManager.getTasks().indexOf(task)+1) + ". " + task.getTitle()+"\nDescrpition: "+task.getDescription()+"\nCreation Date and Time: "+DateOps.formatDate(DateOps.secToDate(task.getCreationDate()))+"\nStatus: "+status+"\n");
-            }
-            else {
-                System.out.println((taskManager.getTasks().indexOf(task)+1) + ". " + task.getTitle()+"\nCreation Date and Time: "+DateOps.formatDate(DateOps.secToDate(task.getCreationDate()))+"\nStatus: "+status+"\n");
-            }
+            return null;
+        });
+        dialog.showAndWait().ifPresent(result -> {
+            String title = result.getKey();
+            String description = result.getValue();
+            if (title == null || title.trim().isEmpty()) title = "Untitled Task";
+            if (description == null || description.trim().isEmpty()) description = "No description";
+            Task newTask = new Task(title, description);
+            taskManager.getTasks().add(newTask);
+            observableList.add(newTask);
+            FileOps.writeJSON(taskManager);
+            showAlert("Successful", "Task added: " + title);
+        });
+    }
+
+    public static void removeSelectedTask(TaskManager taskManager, TableView<Task> table, ObservableList<Task> observableList) {
+        Task selected = table.getSelectionModel().getSelectedItem();
+        if (selected != null) {
+            taskManager.getTasks().remove(selected);
+            observableList.remove(selected);
+            FileOps.writeJSON(taskManager);
+            showAlert("Successful", "Task removed: " + selected.getTitle());
+        } else {
+            showAlert("Warning", "Please select a task to remove!");
         }
     }
 
-    public static void addTask(Scanner scanner, TaskManager taskManager){
-        scanner.nextLine();
-        System.out.println("Enter a task title:");
-        String taskTitle = scanner.nextLine();
-        if (Objects.equals(taskTitle, "")) {
-            taskTitle = "Untitled Task?";
-        }
-        System.out.println("Enter a task description(optional):");
-        String taskDescription = scanner.nextLine();
-        if (Objects.equals(taskDescription, "")){
-            taskDescription = "Empty";
-        }
-        taskManager.addTask(taskTitle,taskDescription);
-        System.out.println("Task added.");
-    }
-
-    public static void removeTask(Scanner scanner, TaskManager taskManager){
-        scanner.nextLine();
-        System.out.println("Select the task you want to delete:");
-        listTasks(taskManager);
-        if (!scanner.hasNextInt()) {
-            System.out.println("Invalid order value");
-        }
-        else {
-            Integer order = scanner.nextInt();
-            if (taskManager.removeTask(order.toString())) {
-                System.out.println("Task removed.");
-            }
-            else {
-                System.out.println("Invalid order value");
-            }
+    public static void toggleSelectedTaskStatus(TaskManager taskManager, TableView<Task> table) {
+        Task selected = table.getSelectionModel().getSelectedItem();
+        if (selected != null) {
+            selected.setStatus(!selected.isStatus());
+            table.refresh();
+            FileOps.writeJSON(taskManager);
+            showAlert("Successful", "Task status toggled: " + selected.getTitle());
+        } else {
+            showAlert("Warning", "Please select a task to toggle status!");
         }
     }
 
-    public static void toggleTaskStatus(Scanner scanner, TaskManager taskManager){
-        scanner.nextLine();
-        System.out.println("Select the task whose status you want to toggle:");
-        listTasks(taskManager);
-        if (!scanner.hasNextInt()) {
-            System.out.println("Incorrect order value.");
-        }
-        else {
-            Integer order = scanner.nextInt();
-            String newStatus;
-            if (taskManager.toggleTaskStatus(order.toString())) {
-                if (taskManager.getTasks().get(order-1).isStatus()){
-                    newStatus = "Completed";
+    public static void clearAllTasks(TaskManager taskManager, ObservableList<Task> observableList) {
+        taskManager.clearTaskList();
+        observableList.clear();
+        FileOps.writeJSON(taskManager);
+        showAlert("Successful", "Tasks are cleared!");
+    }
+
+    public static void filterTasks(TaskManager taskManager, ComboBox<String> comboBox, ObservableList<Task> observableList) {
+        String filter = comboBox.getValue();
+        observableList.clear();
+        switch (filter) {
+            case "Completed":
+                for (Task task : taskManager.getTasks()) {
+                    if (task.isStatus()) observableList.add(task);
                 }
-                else {
-                    newStatus = "Not Completed";
+                break;
+            case "Not Completed":
+                for (Task task : taskManager.getTasks()) {
+                    if (!task.isStatus()) observableList.add(task);
                 }
-                System.out.println("Task status toggled. New status:"+newStatus);
-            }
-            else {
-                System.out.println("Invalid order value.");
-            }
+                break;
+            default:
+                observableList.addAll(taskManager.getTasks());
         }
+    }
+
+    private static void showAlert(String title, String message) {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }

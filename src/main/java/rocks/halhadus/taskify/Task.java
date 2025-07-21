@@ -3,7 +3,7 @@ package rocks.halhadus.taskify;
 public class Task {
     private String title;
     private String description;
-    private final Double creationDate;
+    private final Double creationDate; // "final" added after first stage released. Because of that didn't change it to CREATION_DATE.
     private boolean status;
 
     public Task (String title, String description) {

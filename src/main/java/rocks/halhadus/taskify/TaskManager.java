@@ -5,7 +5,7 @@ import java.util.*;
 public class TaskManager {
     private LinkedList<Task> tasks = new LinkedList<Task>();
 
-    public void addTask(String title, String description){
+    public void addTask(String title, String description){ // it may be needed again in the future
         Task task = new Task(title,description);
         this.tasks.add(task);
     }
@@ -15,7 +15,7 @@ public class TaskManager {
         this.tasks.add(task);
     }
 
-    public boolean removeTask(String order){
+    public boolean removeTask(String order){ // it may be needed again in the future
         if ((Integer.valueOf(order)) > this.tasks.size()) {
             return false;
         }
@@ -33,7 +33,7 @@ public class TaskManager {
         return this.tasks;
     }
 
-    public boolean toggleTaskStatus(String order){
+    public boolean toggleTaskStatus(String order){ // it may be needed again in the future
         if ((Integer.valueOf(order))>this.tasks.size()) {
             return false;
         }
