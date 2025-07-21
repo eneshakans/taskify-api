@@ -1,3 +1,6 @@
+package rocks.halhadus.taskify;
+
+import java.util.Objects;
 import java.util.Scanner;
 
 public class TaskifyMethods {
@@ -7,13 +10,13 @@ public class TaskifyMethods {
         }
         for (Task task : taskManager.getTasks()){
             String status;
-            if (task.isStatus() == true){
+            if (task.isStatus()){
                 status = "Completed";
             }
             else {
                 status = "Not completed";
             }
-            if (task.getDescription() != "Empty") {
+            if (!Objects.equals(task.getDescription(), "Empty")) {
                 System.out.println((taskManager.getTasks().indexOf(task)+1) + ". " + task.getTitle()+"\nDescrpition: "+task.getDescription()+"\nCreation Date and Time: "+DateOps.formatDate(DateOps.secToDate(task.getCreationDate()))+"\nStatus: "+status+"\n");
             }
             else {
@@ -26,12 +29,12 @@ public class TaskifyMethods {
         scanner.nextLine();
         System.out.println("Enter a task title:");
         String taskTitle = scanner.nextLine();
-        if (taskTitle == "") {
+        if (Objects.equals(taskTitle, "")) {
             taskTitle = "Untitled Task?";
         }
         System.out.println("Enter a task description(optional):");
         String taskDescription = scanner.nextLine();
-        if (taskDescription == ""){
+        if (Objects.equals(taskDescription, "")){
             taskDescription = "Empty";
         }
         taskManager.addTask(taskTitle,taskDescription);
@@ -65,7 +68,7 @@ public class TaskifyMethods {
         }
         else {
             Integer order = scanner.nextInt();
-            String newStatus = "Error?";
+            String newStatus;
             if (taskManager.toggleTaskStatus(order.toString())) {
                 if (taskManager.getTasks().get(order-1).isStatus()){
                     newStatus = "Completed";

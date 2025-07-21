@@ -1,3 +1,5 @@
+package rocks.halhadus.taskify;
+
 import java.util.Scanner;
 
 public class Taskify {
@@ -7,7 +9,9 @@ public class Taskify {
         System.out.print("\033[H\033[2J");
         System.out.flush();
         Scanner scanner = new Scanner(System.in);
+        FileOps.loadJSON(taskManager);
         while (exit == 0){
+            FileOps.writeJSON(taskManager);
             Integer val;
             System.out.println("Taskify");
             System.out.println("Choose what you want to do:\n1. Add Task\n2. Remove Task\n3. Toggle Task Status\n4. Clear Task List\n5. List Tasks\n6. Quit");
@@ -16,6 +20,7 @@ public class Taskify {
             }
             else {
                 System.out.println("Incorrect value");
+                scanner.nextLine();
                 continue;
             }
             System.out.print("\033[H\033[2J");

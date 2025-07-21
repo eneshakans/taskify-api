@@ -1,7 +1,9 @@
+package rocks.halhadus.taskify;
+
 public class Task {
     private String title;
     private String description;
-    private Double creationDate;
+    private final Double creationDate;
     private boolean status;
 
     public Task (String title, String description) {
@@ -9,6 +11,13 @@ public class Task {
         this.description = description;
         this.creationDate = DateOps.currentTimeUnix();
         this.status = false;
+    }
+
+    public Task (String title, String description, Double creationDate, boolean status) {
+        this.title = title;
+        this.description = description;
+        this.creationDate = creationDate;
+        this.status = status;
     }
 
     public Double getCreationDate() {

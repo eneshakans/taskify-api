@@ -1,3 +1,5 @@
+package rocks.halhadus.taskify;
+
 import java.util.*;
 
 public class TaskManager {
@@ -5,6 +7,11 @@ public class TaskManager {
 
     public void addTask(String title, String description){
         Task task = new Task(title,description);
+        this.tasks.add(task);
+    }
+
+    public void addTask(String title, String description, Double creationDate, boolean status){
+        Task task = new Task(title,description,creationDate,status);
         this.tasks.add(task);
     }
 
@@ -32,11 +39,7 @@ public class TaskManager {
         }
         else {
             Task task = this.tasks.get(Integer.valueOf(order)-1);
-            if (!task.isStatus()) {
-                task.setStatus(true);
-            } else if (task.isStatus()) {
-                task.setStatus(false);
-            }
+            task.setStatus(!task.isStatus());
             return true;
         }
     }
