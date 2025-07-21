@@ -14,10 +14,10 @@ public class TaskifyMethods {
                 status = "Not completed";
             }
             if (task.getDescription() != "Empty") {
-                System.out.println((taskManager.getTasks().indexOf(task)+1) + ". " + task.getTitle()+"\nDescrpition: "+task.getDescription()+"\nCreation Date and Time: "+DateOps.formatDate(DateOps.milToDate(task.getCreationDate()))+"\nStatus: "+status+"\n");
+                System.out.println((taskManager.getTasks().indexOf(task)+1) + ". " + task.getTitle()+"\nDescrpition: "+task.getDescription()+"\nCreation Date and Time: "+DateOps.formatDate(DateOps.secToDate(task.getCreationDate()))+"\nStatus: "+status+"\n");
             }
             else {
-                System.out.println((taskManager.getTasks().indexOf(task)+1) + ". " + task.getTitle()+"\nCreation Date and Time: "+DateOps.formatDate(DateOps.milToDate(task.getCreationDate()))+"\nStatus: "+status+"\n");
+                System.out.println((taskManager.getTasks().indexOf(task)+1) + ". " + task.getTitle()+"\nCreation Date and Time: "+DateOps.formatDate(DateOps.secToDate(task.getCreationDate()))+"\nStatus: "+status+"\n");
             }
         }
     }

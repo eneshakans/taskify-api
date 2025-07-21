@@ -15,11 +15,6 @@ public class Task {
         return creationDate;
     }
 
-    public void setCreationDate(Double creationDate) {
-        this.creationDate = creationDate;
-    }
-
-
     public boolean isStatus() {
         return status;
     }
