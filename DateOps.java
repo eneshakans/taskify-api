@@ -4,12 +4,12 @@ import java.util.*;
 
 public class DateOps {
     public static Double currentTimeUnix(){
-        Long sec = Instant.now().getEpochSecond();
-        return sec.doubleValue();
+        Long milsec = Instant.now().getEpochSecond();
+        return milsec.doubleValue();
     }
 
-    public static Date secToDate(Double sec){
-        Date date = new Date(sec.longValue() * 1000L);
+    public static Date milToDate(Double milsec){
+        Date date = new Date(milsec.longValue() * 1000L);
         return date;
     }
 

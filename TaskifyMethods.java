@@ -1,6 +1,27 @@
 import java.util.Scanner;
 
 public class TaskifyMethods {
+    public static void listTasks(TaskManager taskManager){
+        if (taskManager.getTasks().isEmpty()){
+            System.out.println("Task list is empty.");
+        }
+        for (Task task : taskManager.getTasks()){
+            String status;
+            if (task.isStatus() == true){
+                status = "Completed";
+            }
+            else {
+                status = "Not completed";
+            }
+            if (task.getDescription() != "Empty") {
+                System.out.println((taskManager.getTasks().indexOf(task)+1) + ". " + task.getTitle()+"\nDescrpition: "+task.getDescription()+"\nCreation Date and Time: "+DateOps.formatDate(DateOps.milToDate(task.getCreationDate()))+"\nStatus: "+status+"\n");
+            }
+            else {
+                System.out.println((taskManager.getTasks().indexOf(task)+1) + ". " + task.getTitle()+"\nCreation Date and Time: "+DateOps.formatDate(DateOps.milToDate(task.getCreationDate()))+"\nStatus: "+status+"\n");
+            }
+        }
+    }
+
     public static void addTask(Scanner scanner, TaskManager taskManager){
         scanner.nextLine();
         System.out.println("Enter a task title:");
@@ -20,7 +41,7 @@ public class TaskifyMethods {
     public static void removeTask(Scanner scanner, TaskManager taskManager){
         scanner.nextLine();
         System.out.println("Select the task you want to delete:");
-        taskManager.listTasks();
+        listTasks(taskManager);
         if (!scanner.hasNextInt()) {
             System.out.println("Invalid order value");
         }
@@ -38,7 +59,7 @@ public class TaskifyMethods {
     public static void toggleTaskStatus(Scanner scanner, TaskManager taskManager){
         scanner.nextLine();
         System.out.println("Select the task whose status you want to toggle:");
-        taskManager.listTasks();
+        listTasks(taskManager);
         if (!scanner.hasNextInt()) {
             System.out.println("Incorrect order value.");
         }

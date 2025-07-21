@@ -8,7 +8,7 @@ public class Taskify {
         System.out.flush();
         Scanner scanner = new Scanner(System.in);
         while (exit == 0){
-            Integer val = 0;
+            Integer val;
             System.out.println("Taskify");
             System.out.println("Choose what you want to do:\n1. Add Task\n2. Remove Task\n3. Toggle Task Status\n4. Clear Task List\n5. List Tasks\n6. Quit");
             if (scanner.hasNextInt()) {
@@ -45,7 +45,7 @@ public class Taskify {
                     System.out.println("Task list cleared.");
                     break;
                 case 5:
-                    taskManager.listTasks();
+                    TaskifyMethods.listTasks(taskManager);
                     break;
                 case 6:
                     System.out.println("Goodbye!");
