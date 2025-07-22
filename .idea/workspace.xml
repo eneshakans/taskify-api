@@ -9,13 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c03b290-bf4c-40ef-8051-0050502c7be7" name="Changes" comment="Repo adapted for Maven and JavaFX">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/taskify_jar.xml" afterDir="false" />
+    <list default="true" id="4c03b290-bf4c-40ef-8051-0050502c7be7" name="Changes" comment="Switched from terminal-based application structure to graphical application structure (stage 3)">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/TaskManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/Taskify.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/Taskify.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/MainView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/TaskifyMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/TaskifyMethods.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +31,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="WARN_ABOUT_CRLF" value="false" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -77,6 +77,11 @@
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
+    ]
   }
 }]]></component>
   <component name="RunManager">
@@ -109,7 +114,8 @@
       <updated>1753104353624</updated>
       <workItem from="1753104354895" duration="135000" />
       <workItem from="1753104607529" duration="415000" />
-      <workItem from="1753105034557" duration="10122000" />
+      <workItem from="1753105034557" duration="11261000" />
+      <workItem from="1753182605071" duration="3545000" />
     </task>
     <task id="LOCAL-00001" summary="Repo adapted for Maven and JavaFX">
       <option name="closed" value="true" />
@@ -119,7 +125,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753105467066</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Switched from terminal-based application structure to graphical application structure (stage 3)">
+      <option name="closed" value="true" />
+      <created>1753117497913</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1753117497913</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,6 +141,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Repo adapted for Maven and JavaFX" />
-    <option name="LAST_COMMIT_MESSAGE" value="Repo adapted for Maven and JavaFX" />
+    <MESSAGE value="Switched from terminal-based application structure to graphical application structure (stage 3)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Switched from terminal-based application structure to graphical application structure (stage 3)" />
   </component>
 </project>

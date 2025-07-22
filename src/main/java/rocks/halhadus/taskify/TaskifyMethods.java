@@ -48,7 +48,7 @@ public class TaskifyMethods {
             Task newTask = new Task(title, description);
             taskManager.getTasks().add(newTask);
             observableList.add(newTask);
-            FileOps.writeJSON(taskManager);
+            DBOps.addTask(newTask);
             showAlert("Successful", "Task added: " + title);
         });
     }
@@ -58,7 +58,7 @@ public class TaskifyMethods {
         if (selected != null) {
             taskManager.getTasks().remove(selected);
             observableList.remove(selected);
-            FileOps.writeJSON(taskManager);
+            DBOps.removeTask(selected);
             showAlert("Successful", "Task removed: " + selected.getTitle());
         } else {
             showAlert("Warning", "Please select a task to remove!");
@@ -70,7 +70,7 @@ public class TaskifyMethods {
         if (selected != null) {
             selected.setStatus(!selected.isStatus());
             table.refresh();
-            FileOps.writeJSON(taskManager);
+            DBOps.updateTask(selected);
             showAlert("Successful", "Task status toggled: " + selected.getTitle());
         } else {
             showAlert("Warning", "Please select a task to toggle status!");
@@ -80,7 +80,7 @@ public class TaskifyMethods {
     public static void clearAllTasks(TaskManager taskManager, ObservableList<Task> observableList) {
         taskManager.clearTaskList();
         observableList.clear();
-        FileOps.writeJSON(taskManager);
+        DBOps.clearAllTasks();
         showAlert("Successful", "Tasks are cleared!");
     }
 

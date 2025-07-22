@@ -15,7 +15,8 @@ public class MainView extends BorderPane {
     private TableView<Task> taskTable = new TaskTable(observableTaskList);
 
     public MainView() {
-        FileOps.loadJSON(taskManager);
+        DBOps.initialize();
+        taskManager.getTasks().addAll(DBOps.loadTasks());
         observableTaskList.addAll(taskManager.getTasks());
         setupTopPanel();
         setCenter(taskTable);
