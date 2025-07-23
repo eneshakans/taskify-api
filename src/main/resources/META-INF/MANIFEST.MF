@@ -1,3 +1,3 @@
 Manifest-Version: 1.0
-Main-Class: rocks.halhadus.taskify.Taskify
+Main-Class: rocks.halhadus.taskify.api.TaskifyAPI
 

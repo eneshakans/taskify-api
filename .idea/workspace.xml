@@ -10,12 +10,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c03b290-bf4c-40ef-8051-0050502c7be7" name="Changes" comment="Switched from terminal-based application structure to graphical application structure (stage 3)">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/taskify_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/MainView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/TaskifyMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/TaskifyMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/DBOps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/DateOps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/MainView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/Task.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/TaskManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/TaskTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/Taskify.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/TaskifyMethods.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/api/TaskifyAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/api/TaskifyAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,18 +70,24 @@
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.TaskifyAPI.executor": "Run",
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/usr/lib/jvm/java-24.0.1-openjfx/jmods",
+    "last_opened_file_path": "/home/enes/IdeaProjects/taskify-web",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Problems",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
@@ -84,13 +99,30 @@
     ]
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.TaskifyAPI">
     <configuration name="taskify.jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/taskify_jar/taskify.jar" />
       <option name="VM_PARAMETERS" value="--module-path /path/to/JavaFX/lib --add-modules=javafx.controls,javafx.fxml" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2" />
     </configuration>
+    <configuration name="TaskifyAPI" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="taskify.api" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="rocks.halhadus.taskify.api.TaskifyAPI" />
+      <option name="VM_PARAMETERS" value=" --add-reads rocks.halhadus.taskify.api=ALL-UNNAMED --add-opens rocks.halhadus.taskify.api/rocks.halhadus.taskify.api=ALL-UNNAMED" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JAR Application.taskify.jar" />
+      <item itemvalue="Spring Boot.TaskifyAPI" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JAR Application.taskify.jar" />
@@ -116,6 +148,8 @@
       <workItem from="1753104607529" duration="415000" />
       <workItem from="1753105034557" duration="11261000" />
       <workItem from="1753182605071" duration="3545000" />
+      <workItem from="1753260108576" duration="6605000" />
+      <workItem from="1753269708898" duration="3314000" />
     </task>
     <task id="LOCAL-00001" summary="Repo adapted for Maven and JavaFX">
       <option name="closed" value="true" />
