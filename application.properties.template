@@ -1,0 +1,13 @@
+spring.datasource.driver-class-name=org.sqlite.JDBC
+spring.datasource.url=jdbc:sqlite:${user.dir}/data.db
+
+spring.datasource.hikari.connection-timeout=20000
+spring.datasource.hikari.maximum-pool-size=5
+
+spring.sql.init.mode=always
+
+jwt.secret=
+jwt.expiration=86400000
+app.admin-ids=
+spring.security.user.password=disabled
+spring.security.user.name=disabled

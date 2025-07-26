@@ -1,30 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
+  </component>
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="taskify:jar" />
+      <artifact name="taskify.api:jar" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c03b290-bf4c-40ef-8051-0050502c7be7" name="Changes" comment="Switched from terminal-based application structure to graphical application structure (stage 3)">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/taskify_jar.xml" beforeDir="false" />
+    <list default="true" id="4c03b290-bf4c-40ef-8051-0050502c7be7" name="Changes" comment="Repository prepared for SpringBoot">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/taskify_api_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/DBOps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/DateOps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/MainView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/Task.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/TaskManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/TaskTable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/Taskify.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/TaskifyMethods.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/api/TaskifyAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rocks/halhadus/taskify/api/TaskifyAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +45,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -87,7 +82,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
@@ -99,9 +94,34 @@
     ]
   }
 }]]></component>
+  <component name="QodanaHighlightedReportService">
+    <option name="localRunNotPublishedPersistedInfo">
+      <LocalReportPersistedInfo>
+        <option name="path" value="/tmp/qodana_output2/qodana.sarif.json" />
+        <option name="reportGuid" value="107dec8b-9d73-4415-835b-8119db6d85f2" />
+        <option name="reportName" value="taskify.api/qodana/2025-07-26" />
+      </LocalReportPersistedInfo>
+    </option>
+  </component>
+  <component name="QodanaIsSelectedPersistenceService">
+    <option name="selectedOrLoading" value="true" />
+  </component>
+  <component name="QodanaReportsService">
+    <option name="descriptions">
+      <ReportDescription localRun="true" path="/tmp/qodana_output1/qodana.sarif.json" reportGuid="578e941c-c3c7-4114-a7c6-40e9aa8042b1" reportId="taskify.api/qodana/2025-07-26" />
+      <ReportDescription localRun="true" path="/tmp/qodana_output2/qodana.sarif.json" reportGuid="107dec8b-9d73-4415-835b-8119db6d85f2" reportId="taskify.api/qodana/2025-07-26" />
+      <ReportDescription localRun="true" path="/tmp/qodana_output/qodana.sarif.json" reportGuid="5e3f4592-e12a-4079-a051-2895b872f34f" reportId="taskify.api/qodana/2025-07-26" />
+    </option>
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.TaskifyAPI">
@@ -114,7 +134,7 @@
     <configuration name="TaskifyAPI" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="taskify.api" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="rocks.halhadus.taskify.api.TaskifyAPI" />
-      <option name="VM_PARAMETERS" value=" --add-reads rocks.halhadus.taskify.api=ALL-UNNAMED --add-opens rocks.halhadus.taskify.api/rocks.halhadus.taskify.api=ALL-UNNAMED" />
+      <option name="VM_PARAMETERS" value="--add-reads rocks.halhadus.taskify.api=ALL-UNNAMED --add-opens rocks.halhadus.taskify.api/rocks.halhadus.taskify.api=ALL-UNNAMED --enable-native-access=org.xerial.sqlitejdbc" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -132,8 +152,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26927.53" />
-        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.26927.53" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.27812.12" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.27812.12" />
       </set>
     </attachedChunks>
   </component>
@@ -149,7 +169,15 @@
       <workItem from="1753105034557" duration="11261000" />
       <workItem from="1753182605071" duration="3545000" />
       <workItem from="1753260108576" duration="6605000" />
-      <workItem from="1753269708898" duration="3314000" />
+      <workItem from="1753269708898" duration="6400000" />
+      <workItem from="1753277371065" duration="6458000" />
+      <workItem from="1753304250204" duration="400000" />
+      <workItem from="1753434869343" duration="4619000" />
+      <workItem from="1753450549034" duration="14319000" />
+      <workItem from="1753512014651" duration="807000" />
+      <workItem from="1753512835215" duration="724000" />
+      <workItem from="1753528567618" duration="6306000" />
+      <workItem from="1753535244283" duration="24352000" />
     </task>
     <task id="LOCAL-00001" summary="Repo adapted for Maven and JavaFX">
       <option name="closed" value="true" />
@@ -167,15 +195,35 @@
       <option name="project" value="LOCAL" />
       <updated>1753117497913</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Repository prepared for SpringBoot">
+      <option name="closed" value="true" />
+      <created>1753273106496</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1753273106496</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Repo adapted for Maven and JavaFX" />
     <MESSAGE value="Switched from terminal-based application structure to graphical application structure (stage 3)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Switched from terminal-based application structure to graphical application structure (stage 3)" />
+    <MESSAGE value="Repository prepared for SpringBoot" />
+    <option name="LAST_COMMIT_MESSAGE" value="Repository prepared for SpringBoot" />
   </component>
 </project>
